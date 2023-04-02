@@ -5,27 +5,20 @@ import { useRouter } from 'vue-router'
 
 const router = useRouter()
 
-function onLogin( data ) {
-    if ( data.token ) {
-        localStorage.setItem( 'api_key', data.token )
-    }
-
+function onRegister() {
     router.push({ name: 'home' })
-}
-
-function gotoRegister() {
-    router.push({ name: 'register' })
 }
 
 </script>
 
 <template>
 
-    <AjaxForm action="/api/login" @success="onLogin" form-type="login">
+    <h1>Register new account</h1>
+
+    <AjaxForm action="/api/register" @success="onRegister" form-type="register">
         <TextField type="email" name="email">Email:</TextField>
         <TextField type="password" name="password">Password:</TextField>
+        <TextField type="password" name="confirmPassword">Confirm Password:</TextField>
     </AjaxForm>
-
-    <button @click="gotoRegister">Register</button>
 
 </template>
