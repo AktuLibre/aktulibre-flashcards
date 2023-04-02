@@ -2,17 +2,28 @@
 
 namespace Tests\Unit;
 
-use PHPUnit\Framework\TestCase;
+use App\Models\User;
+use Illuminate\Foundation\Testing\RefreshDatabase;
+use Tests\TestCase;
+use Illuminate\Support\Facades\DB;
 
 class UserLibraryTest extends TestCase
 {
+    use RefreshDatabase;
     /**
      * A basic unit test example.
      *
      * @return void
      */
-    public function test_example()
+    public function test_shouldCreateLibrary()
     {
-        $this->assertTrue(true);
+        $user = new User([ 'email' => 'test@test.com', 'name' => 'Test', 'is_admin' => false, 'password' => 'admin'  ]);
+        $user->save();
+
+        $user->createLibrary();
+        
+        $this->assertTrue( 
+            DB::table( 'libraries' )->where( 'user_id', $user->id )->count() == 1
+        );
     }
 }
