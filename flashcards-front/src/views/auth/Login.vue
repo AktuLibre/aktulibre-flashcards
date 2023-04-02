@@ -24,6 +24,9 @@ function gotoRegister() {
     <AjaxForm action="/api/login" @success="onLogin" form-type="login">
         <TextField type="email" name="email">Email:</TextField>
         <TextField type="password" name="password">Password:</TextField>
+        <template v-slot:form-submit class="login-button">
+            <input type='submit' class="submit-button" value="Login"/>
+        </template>
     </AjaxForm>
 
     <button @click="gotoRegister">Register</button>

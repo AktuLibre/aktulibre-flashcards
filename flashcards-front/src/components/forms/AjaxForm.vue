@@ -98,7 +98,21 @@ function onFormSubmit( ev ) {
 
         <slot></slot>
 
-        <input type='submit'/>
+        <slot name="form-submit">
+            <input type='submit' class="submit-button"/>
+        </slot>
 
     </form>
 </template>
+<style>
+.submit-button{
+    width: 100%;
+    background-color: var( --color-primary ) !important;
+    border-radius: 1000px;
+    display: inline-block;
+    padding: 8px 18px;
+    color: white;
+    user-select: none;
+    font-weight: 500;
+}
+</style>
