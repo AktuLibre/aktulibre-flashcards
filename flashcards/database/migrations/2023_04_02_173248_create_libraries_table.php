@@ -28,6 +28,7 @@ return new class extends Migration
             $table->dateTime( 'created_at' )->nullable( false );
             $table->dateTime( 'last_view_at' )->nullable();
 
+            $table->primary([ 'library_id', 'deck_id' ]);
             $table->foreign( 'library_id' )->references( 'id' )->on( 'libraries' );
             $table->foreign( 'deck_id' )->references( 'id' )->on( 'decks' );
         });
