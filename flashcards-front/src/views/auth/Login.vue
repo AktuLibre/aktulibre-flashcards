@@ -9,6 +9,10 @@ function onLogin() {
     router.push({ name: 'home' })
 }
 
+function gotoRegister() {
+    router.push({ name: 'register' })
+}
+
 </script>
 
 <template>
@@ -17,5 +21,7 @@ function onLogin() {
         <TextField type="email" name="email">Email:</TextField>
         <TextField type="password" name="password">Password:</TextField>
     </AjaxForm>
+
+    <button @click="gotoRegister">Register</button>
 
 </template>
