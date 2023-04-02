@@ -16,7 +16,7 @@ use App\Http\Controllers\Api\ApiAuthController;
 */
 
 Route::post( '/login', [ ApiAuthController::class, 'login' ]);
-Route::post( '/user', [ ApiAuthController::class, 'register' ]);
+Route::post( '/register', [ ApiAuthController::class, 'register' ]);
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();

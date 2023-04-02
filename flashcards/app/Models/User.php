@@ -35,4 +35,20 @@ class User extends Model implements AuthenticatableContract
     public function decks() {
         return $this->hasMany( Deck::class );
     }
+
+    public function getLibrary() 
+    {
+        return Library::where( 'user_id', $this->id )
+            // ->where( 'parent_id', null )
+            ->firstOr( function() { return $this->createLibrary(); } );
+    }
+
+    public function createLibrary() 
+    {
+        $library = new Library([ 'name' => $this->name . " Library" ]);
+        $library->user()->associate( $this );
+        $library->save();
+
+        return $library;
+    }
 }
