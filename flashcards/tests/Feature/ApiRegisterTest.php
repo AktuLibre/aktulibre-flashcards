@@ -19,6 +19,7 @@ class UserTest extends TestCase
      */
     public function test_register()
     {
+        //tests new user creation
         $password = $this->faker->password();
         $email = $this->faker->email();
 
@@ -28,5 +29,16 @@ class UserTest extends TestCase
         ]);
 
         $response->assertStatus( 200 );
+
+        //tests if existing user returns failing response
+        $response = $this->post( '/api/user', [
+            'email' => $email,
+            'password' => $password,
+        ]);
+
+        $response->assertJson([
+            'message' => 'This user is already registered.'
+        ]);
+        $response->assertStatus( 401 );
     }
 }
