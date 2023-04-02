@@ -6,7 +6,7 @@ import { useRouter } from 'vue-router'
 const router = useRouter()
 
 function onRegister() {
-    console.log("registered");
+    router.push({ name: 'home' })
 }
 
 </script>
