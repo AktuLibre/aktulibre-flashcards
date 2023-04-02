@@ -17,7 +17,7 @@ function gotoRegister() {
 
 <template>
 
-    <AjaxForm action="/api/login" @success="onLogin">
+    <AjaxForm action="/api/login" @success="onLogin" form-type="login">
         <TextField type="email" name="email">Email:</TextField>
         <TextField type="password" name="password">Password:</TextField>
     </AjaxForm>
