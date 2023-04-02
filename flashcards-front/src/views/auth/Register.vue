@@ -15,7 +15,7 @@ function onRegister() {
 
     <h1>Register new account</h1>
 
-    <AjaxForm action="/api/login" @success="onRegister" form-type="register">
+    <AjaxForm action="/api/user" @success="onRegister" form-type="register">
         <TextField type="email" name="email">Email:</TextField>
         <TextField type="password" name="password">Password:</TextField>
         <TextField type="password" name="confirmPassword">Confirm Password:</TextField>
