@@ -6,9 +6,15 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Deck;
 use App\Models\DeckItem;
+use App\Http\Resources\Quiz\QuizDetailResource;
+use App\Services\QuizGeneration\QuizGenerationService;
 
 class ApiQuizController extends Controller
 {
+    public function __construct(
+        private QuizGenerationService $generator,
+    ) {}
+
     /**
      * Returns a generated quiz for this user
      *
@@ -18,7 +24,9 @@ class ApiQuizController extends Controller
      */
     public function get( Request $request, Deck $deck )
     {
-        return response( 200 );
+        return new QuizDetailResource(
+            $this->generator->get_or_generate( $deck, $request->user() )
+        );
     }
 
     /**
