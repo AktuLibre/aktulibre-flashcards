@@ -21,7 +21,5 @@ jobs:
       - uses: actions/checkout@v2
       - name: Set-up Docker Image
         run: docker-compose up -d
-      - name: Test container output
-        run: |
-          docker exec aktulibre-flashcards_db_1 ls
-          docker exec aktulibre-flashcards_db_1 pwd
+      - name: Install tree
+        run: docker exec -it aktulibre-flashcards_db_1 sh -c "ls"
