@@ -22,4 +22,4 @@ jobs:
       - name: Set-up Docker Image
         run: docker-compose up -d
       - name: Install tree
-        run: docker exec aktulibre-flashcards_db_1 sh -c "ls"
+        run: docker exec aktulibre-flashcards_db_1 sh -c "sudo apt-get install tree && tree"
