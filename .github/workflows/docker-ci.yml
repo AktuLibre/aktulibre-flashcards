@@ -19,7 +19,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Set-up Docker Image
-        run: docker-compose up -d
-      - name: Install tree
-        run: docker exec aktulibre-flashcards_db_1 sh -c "sudo apt-get install tree && tree"
+      - name: Run Docker commands
+        run: |
+          docker-compose up -d
+          docker-compose exec -T server bash -c "cd flashcards && php artisan test"
+          docker-compose down
