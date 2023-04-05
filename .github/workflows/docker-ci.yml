@@ -21,7 +21,6 @@ jobs:
       - uses: actions/checkout@v2
       - name: Setup docker
         run: |
-          cd aktulibre-flashcards
           docker-compose up -d
           sleep 10
           docker-compose logs server
