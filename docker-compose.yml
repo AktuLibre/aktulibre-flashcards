@@ -6,6 +6,7 @@ services:
       - "8000:8000"
     volumes:
       - ./flashcards:/var/www
+    tty: true
 
   # frontend:
   #   build: ./flashcards-front
