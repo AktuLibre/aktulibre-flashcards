@@ -20,4 +20,4 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Run Docker commands
-        run: docker-compose up server --attach
+        run: docker-compose up --attach server
