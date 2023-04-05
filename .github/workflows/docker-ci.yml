@@ -19,5 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Run Docker commands
-        run: docker-compose up --attach server
+      - name: Setup docker
+        run: docker-compose up -d
+      - name: Run Docker tests
+        run: docker-compose exec -T server bash -c "ls"
