@@ -27,3 +27,5 @@ jobs:
           docker ps -a
       - name: Run tests
         run: docker exec aktulibre-flashcards_server_1 bash -c "php artisan test"
+      - name: Stop docker image
+        run: docker-compose stop
