@@ -22,6 +22,6 @@ jobs:
       - name: Setup docker
         run: docker-compose up -d
       - name: Run ps
-        run: docker ps
+        run: docker ps -a
       - name: Run tests
         run: docker exec aktulibre-flashcards-server-1 bash -c "ls"
