@@ -29,7 +29,7 @@ jobs:
         run: |
           sleep 5
           docker ps -a
-          docker exec aktulibre-flashcards_server_1 bash -c "ls -la /var/www"
+          docker exec aktulibre-flashcards_server_1 bash -c "ls -la"
       - name: Run tests
         run: docker exec aktulibre-flashcards_server_1 bash -c "php artisan test"
 
