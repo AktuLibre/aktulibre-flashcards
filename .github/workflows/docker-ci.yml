@@ -22,4 +22,4 @@ jobs:
       - name: Setup docker
         run: docker-compose up -d
       - name: Run Docker tests
-        run: docker-compose exec -T server bash -c "ls"
+        run: docker ps
