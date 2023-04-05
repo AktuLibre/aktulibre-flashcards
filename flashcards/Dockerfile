@@ -15,6 +15,8 @@ WORKDIR /var/www
 
 RUN composer install
 
+CMD [ "php", "artisan", "test" ]
+
 EXPOSE 8000
 
 CMD [ "php", "artisan", "serve", "--host", "0.0.0.0" ]
