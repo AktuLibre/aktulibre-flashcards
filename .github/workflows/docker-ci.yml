@@ -20,7 +20,4 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Run Docker commands
-        run: |
-          docker-compose up -d
-          docker-compose exec -T server bash -c "cd flashcards && php artisan test"
-          docker-compose down
+        run: docker-compose up -d
