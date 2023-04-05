@@ -20,6 +20,10 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Setup docker
-        run: docker-compose up -d
-      - name: Run Docker tests
-        run: docker exec aktulibre-flashcards_server_1 bash -c "ls"
+        run: |
+          cd aktulibre-flashcards
+          docker-compose up -d
+          sleep 10
+          docker-compose logs server
+          docker exec aktulibre-flashcards_server_1 bash -c "ls"
+          docker-compose down
