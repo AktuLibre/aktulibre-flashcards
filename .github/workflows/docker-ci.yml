@@ -25,10 +25,11 @@ jobs:
           run: docker-compose stop
       - name: Setup docker
         run: docker-compose up -d
-      - name: Run ps
+      - name: Debug
         run: |
-          sleep 15
+          sleep 5
           docker ps -a
+          docker exec aktulibre-flashcards_server_1 bash -c "ls -la /var/www"
       - name: Run tests
         run: docker exec aktulibre-flashcards_server_1 bash -c "php artisan test"
 
