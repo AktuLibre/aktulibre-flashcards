@@ -13,6 +13,9 @@ const props = defineProps({
     },
     action: {
         type: String,
+    },
+    formType: {
+        type: String,
     }
 })
 const emit = defineEmits( 'success' )
@@ -36,6 +39,13 @@ provide( FormDiscovery, registerFormElement )
  */
 function onFormSubmit( ev ) {
     ev.preventDefault();
+
+    if (props.formType == "register") {
+        if (formItems["password"].getValue() !== formItems["confirmPassword"].getValue()) {
+            formErrorMessage.value = "Password and Confirm Password do not match"
+            return;
+        }
+    }
 
     let data = {}
     for ( const name in formItems ) {
@@ -88,7 +98,21 @@ function onFormSubmit( ev ) {
 
         <slot></slot>
 
-        <input type='submit'/>
+        <slot name="form-submit">
+            <input type='submit' class="submit-button"/>
+        </slot>
 
     </form>
 </template>
+<style>
+.submit-button{
+    width: 100%;
+    background-color: var( --color-primary ) !important;
+    border-radius: 1000px;
+    display: inline-block;
+    padding: 8px 18px;
+    color: white;
+    user-select: none;
+    font-weight: 500;
+}
+</style>
