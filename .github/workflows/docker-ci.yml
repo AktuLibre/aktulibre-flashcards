@@ -32,6 +32,8 @@ jobs:
           sleep 5
           docker ps -a
           docker exec aktulibre-flashcards_server_1 bash -c "ls -la"
+      - name: Composer install
+        run: docker exec aktulibre-flashcards_server_1 bash -c "composer update"
       - name: Run tests
         run: docker exec aktulibre-flashcards_server_1 bash -c "php artisan test"
 
