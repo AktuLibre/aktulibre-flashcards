@@ -24,15 +24,13 @@ jobs:
         with:
           run: docker-compose stop
       - name: Setup docker
-        run: |
-          docker-compose up -d
-          docker exec aktulibre-flashcards_server_1 bash -c "composer update"
+        run: docker-compose up -d
       - name: Debug
         run: |
           sleep 5
           docker ps -a
           docker exec aktulibre-flashcards_server_1 bash -c "ls -la"
-      - name: Composer install
+      - name: Composer update
         run: docker exec aktulibre-flashcards_server_1 bash -c "composer update"
       - name: Run tests
         run: docker exec aktulibre-flashcards_server_1 bash -c "php artisan test"
