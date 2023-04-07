@@ -24,7 +24,9 @@ jobs:
         with:
           run: docker-compose stop
       - name: Setup docker
-        run: docker-compose up -d
+        run: |
+          docker-compose up -d
+          docker exec aktulibre-flashcards_server_1 bash -c "composer update"
       - name: Debug
         run: |
           sleep 5
