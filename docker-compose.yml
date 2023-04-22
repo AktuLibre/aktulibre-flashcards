@@ -2,6 +2,7 @@ version: '3'
 services:
   server:
     build: ./flashcards
+    command: tail -F anything
     ports: 
       - "8000:8000"
     volumes:
