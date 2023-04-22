@@ -2,6 +2,31 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+    --color-primary: #3BC14A;
+    --color-primary-active: #49DC5A;
+}
+
+.theme-light {
+    --color-text: #343434;
+    --color-text-light: #707070;
+
+    --color-primary-text: #298533;
+    --color-primary-text-active: #3CD44D;
+
+    --color-content-bg: #F5F5F5;
+    --color-shadow: #E8E2E2;
+    --color-hover: #E8E2E2;
+    --color-accent: var( --color-text-light );
+
+    --color-white: #FFFFFF;
+    --color-danger: #D93329;
+    --color-success: var( --color-primary-text );
+
+    --color-bg-form-control: var( --color-white );
+    --color-bg-form-control-focus: #FBFBFB;
+}
+
 h1 {
     @apply my-4;
     font-size: 2em;

@@ -4,9 +4,11 @@ import ServerConnectionWrapper from './components/wrappers/ServerConnectionWrapp
 </script>
 
 <template>
-  <ServerConnectionWrapper>
-    <RouterView />
-  </ServerConnectionWrapper>
+  <div class="theme-light">
+    <ServerConnectionWrapper>
+      <RouterView />
+    </ServerConnectionWrapper>
+  </div>
 </template>
 
 <style scoped>
