@@ -27,6 +27,8 @@ class ApiQuizController extends Controller
         return new QuizDetailResource(
             $this->generator->get_or_generate( $deck, $request->user() )
         );
+
+        return response( 200 );
     }
 
     /**
