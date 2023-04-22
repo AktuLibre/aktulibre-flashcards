@@ -29,6 +29,6 @@ class QuizTest extends TestCase
         $deck->save();
 
         $response = $this->actingAs( $user )->getJson( "/api/decks/{$deck->id}/quiz" );
-        $response->assertStatus(200);
+        $response->assertStatus(201);
     }
 }
