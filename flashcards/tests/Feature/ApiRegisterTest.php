@@ -23,7 +23,7 @@ class UserTest extends TestCase
         $password = $this->faker->password();
         $email = $this->faker->email();
 
-        $response = $this->post( '/api/user', [
+        $response = $this->post( '/api/register', [
             'email' => $email,
             'password' => $password,
         ]);
@@ -31,7 +31,7 @@ class UserTest extends TestCase
         $response->assertStatus( 200 );
 
         //tests if existing user returns failing response
-        $response = $this->post( '/api/user', [
+        $response = $this->post( '/api/register', [
             'email' => $email,
             'password' => $password,
         ]);
