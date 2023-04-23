@@ -1,7 +1,7 @@
 <script setup>
 import { computed } from 'vue';
-// import { useUserSettingStore } from "../../stores/user-settings";
-
+// import Button from '../ui/Button.vue';
+import Button from './ui/Button.vue';
 const logo = "/LOGO.png"
 </script>
 <template>
@@ -13,7 +13,7 @@ const logo = "/LOGO.png"
         </router-link>
         <div class="px-8">
             <div class="links">
-                <router-link :to="{name: 'home'}">
+                <!-- <router-link :to="{name: 'home'}">
                     <div class='sidebar-link'>Home</div>
                 </router-link>
                 <router-link :to="{name: 'home'}">
@@ -21,8 +21,9 @@ const logo = "/LOGO.png"
                 </router-link>
                 <router-link :to="{name: 'home'}">
                     <div class='sidebar-link'>Forum</div>
-                </router-link>
+                </router-link> -->
             </div>
+            <Button :to="{name: 'create-deck'}">New deck</Button>
         </div>
     </div>
 </template>
