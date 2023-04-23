@@ -14,6 +14,10 @@ const props = defineProps({
         type: String,
         required: true,
     },
+    value: {
+        type: String,
+        default: '',
+    }
 })
 
 const { data, error } = useFormElement( props.name )
