@@ -19,7 +19,11 @@ class Deck extends Model
         return $this->belongsTo( User::class );
     }
 
-    public function flashcards() {
+    public function cards() {
         return $this->hasMany( Flashcard::class );
+    }
+
+    public function quizzes() {
+        return $this->hasMany( Quiz::class );
     }
 }
