@@ -14,14 +14,6 @@ class DeckResource extends JsonResource
      */
     public function toArray($request)
     {
-        return [
-            'id' => $this->id,
-            'name' => $this->name,
-            'card_count' => $this->get_card_count(),
-        ];
-    }
-
-    private function get_card_count() {
-        return $this->cards()->count();
+        return parent::toArray($request);
     }
 }
