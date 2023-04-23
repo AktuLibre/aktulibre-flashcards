@@ -16,7 +16,12 @@ const router = createRouter({
                     path: '/',
                     name: 'home',
                     component: Dashboard
-                }
+                },
+                { 
+                    path: '/decks/new',
+                    name: 'create-deck',
+                    component: () => import( '../views/decks/CreateDeck.vue' )
+                },
             ]
         },
         
