@@ -22,6 +22,18 @@ class ApiDeckController extends Controller
         
     }
 
+    /**
+     * Get deck by id
+     *
+     * @param Request $request
+     * @param Deck $deck
+     * @return App\Http\Resources\Deck\DeckDetailResource
+     */
+    public function get( Request $request, Deck $deck )
+    {
+        return new DeckResource( $deck );
+    }
+
     public function create( CreateDeck $request )
     {
         $data = $request->validated();
