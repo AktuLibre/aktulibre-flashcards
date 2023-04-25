@@ -28,5 +28,6 @@ Route::middleware( 'auth:sanctum' )->group( function() {
     Route::get( '/decks/{deck}/quiz', [ ApiQuizController::class, 'get' ] );
     Route::post( '/quiz/item/{quizItem}/progress', [ ApiQuizController::class, 'report_quiz_item_progress' ]);
     Route::post( '/decks', [ ApiDeckController::class, 'create' ] );
+    Route::get( '/decks/{deck}', [ ApiDeckController::class, 'get' ] )->middleware( 'can:view,deck' );
     // Route::get( '/library', [ ApiLibraryController::class, 'index' ]);
 });

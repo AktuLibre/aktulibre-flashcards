@@ -29,6 +29,6 @@ function gotoRegister() {
         </template>
     </AjaxForm>
 
-    <button @click="gotoRegister">Register</button>
+    <button @click="gotoRegister" class="register-button">Register</button>
 
 </template>

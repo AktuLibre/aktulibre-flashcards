@@ -46,7 +46,6 @@ class User extends Model implements AuthenticatableContract
     {
         $library = new Library([ 'name' => $this->name . " Library" ]);
         $library->user()->associate( $this );
-        
         $library->save();
 
         return $library;

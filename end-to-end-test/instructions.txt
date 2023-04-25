@@ -1,0 +1,7 @@
+1. Download Python
+2. Execute command: pip install selenium
+2.1: Execute command pip install colorama
+3. Check chrome version: open help in chrome
+4. Download Chrome WebDriver Executable: https://chromedriver.chromium.org/downloads
+5. Add WebDriver path to PATH 
+6. Run: python test.py
