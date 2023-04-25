@@ -33,6 +33,6 @@ def print_test_results():
             print(f"\t{Back.RED}{test_name} FAILED{Style.RESET_ALL}")
 
 if __name__ == "__main__":
-    execute_test("login-test.py")
+    execute_test("register-test.py")
     execute_test("login-test.py")
     print_test_results()
