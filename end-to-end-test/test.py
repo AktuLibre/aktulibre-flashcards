@@ -36,4 +36,5 @@ if __name__ == "__main__":
     execute_test("register-test.py")
     execute_test("login-test.py")
     execute_test("deck-create.py")
+    execute_test("admin-user-login.py")
     print_test_results()
